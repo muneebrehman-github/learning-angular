@@ -1,0 +1,16 @@
+<div class="login">
+    <div class="display-4 mb-5 text-center">{{'Login' | uppercase}}</div>
+
+    <div class="row my-2">
+        <div class="col"><input [(ngModel)]="email" type="email" name="email" placeholder="Email" class="form-control" autocomplete="off"></div>
+    </div>
+    <div class="row my-2">
+        <div class="col"><input [(ngModel)]="password" type="password" name="email" placeholder="Password" class="form-control" autocomplete="off"></div>
+    </div>
+    <div class="row">
+        <button class="btn btn-dark" (click)="performLogin()">Login</button>
+    </div>
+</div>
+<ngb-toast class="m-3" *ngIf="showToast" [delay]="5000" [autohide]="true">
+    <h6 [class]="login ? 'text-success' : 'text-danger'">{{toastBody}}</h6>
+</ngb-toast>

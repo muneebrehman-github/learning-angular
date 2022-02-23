@@ -1,0 +1,17 @@
+<div class="display-4">Create Blog Post</div>
+<div class="container my-3">
+    <div class="mb-3">
+        <label for="blogTitle" class="form-label">Title</label>
+        <input [(ngModel)]="title" type="text" class="form-control" id="blogTitle">
+        <div class="form-text">Give a catching title to your blog post.</div>
+    </div>
+    <div class="form-floating my-2">
+        <textarea [(ngModel)]="content" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+        <label for="floatingTextarea">Post Your Thoughts</label>
+    </div>
+    <button type="submit" (click)="post()" class="btn btn-primary">{{buttonLabel}}</button>
+</div>
+
+<ngb-toast class="m-3" *ngIf="showToast" [delay]="5000" [autohide]="true">
+    <h6 class="text-info">{{toastBody}}</h6>
+</ngb-toast>
